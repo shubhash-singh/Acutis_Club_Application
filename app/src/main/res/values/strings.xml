@@ -16,4 +16,12 @@
     <string name="notice">Notice Board</string>
     <string name="profile">Profile</string>
     <string name="edit_profile">Edit profile</string>
+    <string name="logout">Logout</string>
+    <string name="attendance">Attendance</string>
+    <string name="leetcode_profile">LeetCode profile</string>
+    <string name="github_profile">GitHub profile</string>
+    <string name="hackerrank_profile">HackerRank profile</string>
+    <string name="search">Search</string>
+    <string name="project_description">Project description</string>
+    <string name="project_name">Project Name</string>
 </resources>

@@ -23,6 +23,7 @@
         app:layout_constraintVertical_bias="0.779" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/mainContainer"
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:layout_marginHorizontal="15dp"
@@ -38,7 +39,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#D1D1D1">
+            android:background="@drawable/bg_gradient_profile_page">
 
             <EditText
                 android:id="@+id/emailEditText"
@@ -92,12 +93,15 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.531" />
 
-            <Button
+            <TextView
                 android:id="@+id/loginButton"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
+                android:background="@drawable/bg_logout_button"
+                android:clickable="true"
+                android:focusable="true"
                 android:text="@string/login"
+                android:textAlignment="center"
                 android:textColor="#00072E"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +109,26 @@
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.874" />
+                app:layout_constraintVertical_bias="0.693" />
+
+            <TextView
+                android:id="@+id/signUpButton"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_logout_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/sign_up"
+                android:textAlignment="center"
+                android:textColor="#00072E"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.945" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

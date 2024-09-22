@@ -21,7 +21,6 @@ public class ProfileFragment extends Fragment {
         nameTextView = view.findViewById(R.id.displayName);
         rollNoTextView = view.findViewById(R.id.displayRollNo);
         profilePitureImageView = view.findViewById(R.id.profileImage);
-        editProfileTextView = view.findViewById(R.id.editProfileTextView);
 
         return view;
     }

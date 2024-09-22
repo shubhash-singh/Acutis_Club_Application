@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,12 +12,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+
+import com.google.firebase.auth.FirebaseUser;
 import com.ragnar.acutisclub.Backend.PerformLogin;
 import com.ragnar.acutisclub.Callbacks.SuccessFailureCallback;
 
 public class MainActivity extends AppCompatActivity {
-    Button loginButton;
-    TextView forgetPassword;
+    TextView forgetPassword, loginButton, signUpButton;
     EditText emailEditText, passwordEditText;
 
     @Override
@@ -36,30 +36,34 @@ public class MainActivity extends AppCompatActivity {
 
         loginButton = findViewById(R.id.loginButton);
         forgetPassword = findViewById(R.id.forgetPasswordButton);
+        signUpButton = findViewById(R.id.signUpButton);
 
-        String emailString = emailEditText.getText().toString();
-        String passwordString = passwordEditText.getText().toString();
+
 
         //to make an alert box to contact admin
-        forgetPassword.setOnClickListener(view ->{
-            setForgetPassword();
-        });
+        forgetPassword.setOnClickListener(view -> setForgetPassword());
 
 
         loginButton.setOnClickListener(view -> {
 
+            String emailString = emailEditText.getText().toString();
+            String passwordString = passwordEditText.getText().toString();
+
             PerformLogin performLogin = new PerformLogin();
+
             if(emailString.isEmpty() || passwordString.isEmpty()){
                 Toast.makeText(this, "Fill both the fields", Toast.LENGTH_SHORT).show();
+
             }
             else {
                 performLogin.login(emailString, passwordString, new SuccessFailureCallback() {
                     @Override
-                    public void onSuccess(String message) {
+                    public void onSuccess(FirebaseUser user) {
+
+                        Toast.makeText(MainActivity.this, "Login successful! Welcome ", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this, LoadFragments.class);
                         startActivity(intent);
-
-                        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                        finish();
                     }
 
                     @Override
@@ -68,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
+        });
+
+        signUpButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+            startActivity(intent);
         });
     }
 
