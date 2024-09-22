@@ -20,6 +20,7 @@ import com.ragnar.acutisclub.Callbacks.SuccessFailureCallback;
 
 public class SignUpActivity extends AppCompatActivity {
     EditText nameEditText, rollNoEditText, phoneEditText,emailEditText, passwordEditText;
+    EditText leetCodeEditText, hackerRankEditText, gitHubEditText;
     Button signUp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,10 @@ public class SignUpActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
 
+        leetCodeEditText = findViewById(R.id.leetcodeEditText);
+        hackerRankEditText = findViewById(R.id.hackerrankEditText);
+        gitHubEditText = findViewById(R.id.githubEditText);
+
         signUp = findViewById(R.id.registerButton);
 
         signUp.setOnClickListener(view -> {
@@ -48,8 +53,11 @@ public class SignUpActivity extends AppCompatActivity {
             String phone = phoneEditText.getText().toString().trim();
             String email = emailEditText.getText().toString().trim();
             String password = passwordEditText.getText().toString().trim();
+            String leetCodeLink = leetCodeEditText.getText().toString().trim();
+            String hackerRankLink = hackerRankEditText.getText().toString().trim();
+            String githubLink = gitHubEditText.getText().toString().trim();
 
-            performRegistration.registerUser(name, rollNo, phone, email, password, new SuccessFailureCallback() {
+            performRegistration.registerUser(name, rollNo, phone, email, password,leetCodeLink, hackerRankLink, githubLink, new SuccessFailureCallback() {
                 @Override
                 public void onSuccess(FirebaseUser user) {
                     // Handle success - registration successful, user created and data stored in Firestore

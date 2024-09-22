@@ -37,6 +37,27 @@
         android:hint="Password"
         android:inputType="textPassword"/>
 
+    <EditText
+        android:id="@+id/leetcodeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="LeetCode profile link"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/hackerrankEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="HackerRank profile link"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/githubEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Github profile link"
+        android:inputType="textPassword"/>
+
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"

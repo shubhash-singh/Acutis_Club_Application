@@ -38,7 +38,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Subhash Singh"
+                        android:text="@string/empty_string"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:textSize="28sp"/>
@@ -47,7 +47,8 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="22781A05K2"
+                        android:text="@string/empty_string"
+                        android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         android:textSize="17sp"/>
@@ -174,6 +175,7 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
+                android:id="@+id/logoutButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/logout"

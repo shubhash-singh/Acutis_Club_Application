@@ -21,7 +21,7 @@ public class PerformSignUp {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
     }
-    public void registerUser(String name, String rollNo, String phone, String email, String password, SuccessFailureCallback callback) {
+    public void registerUser(String name, String rollNo, String phone, String email, String password,String leetCodeLink,String hackerRankLink, String githubLink, SuccessFailureCallback callback) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -35,6 +35,10 @@ public class PerformSignUp {
                             userData.put("rollNo", rollNo);
                             userData.put("phone", phone);
                             userData.put("email", email);
+                            userData.put("leetCodeLink", leetCodeLink);
+                            userData.put("hackerRankLink", hackerRankLink);
+                            userData.put("githubLink", githubLink);
+
 
                             // Store user data in Firestore under "users" collection, document is user's UID
                             db.collection("users")
